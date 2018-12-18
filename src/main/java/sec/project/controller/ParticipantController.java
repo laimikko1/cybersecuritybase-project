@@ -5,14 +5,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import sec.project.domain.Signup;
-import sec.project.repository.SignupRepository;
+
+// import sec.project.domain.User;
+// import sec.project.repository.UserRepository;
 
 @Controller
-public class SignupController {
+public class ParticipantController {
 
-    @Autowired
-    private SignupRepository signupRepository;
+    // @Autowired
+    // private UserRepository UserRepository;
 
     @RequestMapping("*")
     public String defaultMapping() {
@@ -26,7 +27,7 @@ public class SignupController {
 
     @RequestMapping(value = "/form", method = RequestMethod.POST)
     public String submitForm(@RequestParam String name, @RequestParam String address) {
-        signupRepository.save(new Signup(name, address));
+        // UserRepository.save(new User(name, address));
         return "done";
     }
 
